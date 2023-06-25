@@ -1,0 +1,54 @@
+.full-border {
+    width: 25%;
+    border: 2px solid #FBF1D3;
+}
+
+a:link {
+    color: #561c78;
+}
+
+a:active {
+    color: #561c78;
+}
+
+a:visited {
+    color: #561c78;
+}
+
+a:hover {
+    color: #FBF1D3;
+}
+
+body {
+    background-image: url("background.jpg");
+    color: #561c78;
+}
+
+body * {
+    text-align: left;
+    padding: 2PX;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+}
+
+header li {
+    display: inline;
+}
+
+p {
+    width: 500px;
+    border: 2px solid #FBF1D3;
+}
+
+table, th, td  {
+    border: 1px solid #FBF1D3;
+    padding: 3px;
+}
+
+img {
+    padding: 0px;
+    border: 4px solid #FBF1D3;
+}
+
+footer p {
+    width: 300px;
+}

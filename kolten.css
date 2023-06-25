@@ -1,0 +1,74 @@
+.full-border {
+    margin: auto;
+    width: 25%;
+    border: 2px solid orange;
+}
+
+a:link {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+a:visited {
+    color: plum;
+}
+
+a:hover {
+    color: orange;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+
+body * {
+    margin: auto;
+    text-align: center;
+    padding: 2PX;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header li {
+    display: inline;
+}
+
+p {
+    width: 25%;
+    border: 2px solid orange;
+}
+
+table, th, td  {
+    border: 1px solid orange;
+    padding: 3px;
+    margin: auto;
+}
+
+body img {
+    width: 20%;
+    margin-left: 40%;
+    margin-right: 40%;
+    padding: 0px;
+    border: 4px solid orange;
+}
+
+footer {
+    height: 200px;
+}
+
+#log-in-button{
+    margin-left: 90%;
+    border: 1px solid orange;
+    color: white;
+    padding: 3px;
+    cursor: pointer;
+}
+.center {
+    margin-left: 45%;
+    margin-right: 45%;
+    width: 10%;
+    border: 2px solid orange;
+}
