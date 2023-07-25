@@ -1,0 +1,41 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 9.0c [nvldumd.dll 31.0.15.2890]
+    Renderer: NVIDIA GeForce RTX 3070 Ti Laptop GPU
+    Vendor:   NVIDIA
+    VRAM:     3072 MB (via DXGI)
+    Caps:     Shader=30 DepthRT=1 NativeDepth=1 NativeShadow=1 DF16=0 INTZ=1 NULL=1 RESZ=0 SlowINTZ=0 ATOC=1 BC4=1 BC5=1
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+- Completed reload, in  0.512 seconds
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\System.dll (this message is harmless)
+desktop: 2560x1600 165Hz; virtual: 2560x1600 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+WARNING: BC6H/BC7 texture format is not supported, decompressing texture
+UnloadTime: 0.691500 ms
+Platform assembly: C:\Users\kolten\Desktop\Games\Excellent\Excellent_Data\Managed\Boo.Lang.dll (this message is harmless)
+Setting up 5 worker threads for Enlighten.
+  Thread -> id: 3388 -> priority: 1 
+  Thread -> id: 53f8 -> priority: 1 
+  Thread -> id: 4db8 -> priority: 1 
+  Thread -> id: 61f0 -> priority: 1 
+  Thread -> id: 6538 -> priority: 1 
