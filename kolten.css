@@ -13,7 +13,7 @@ a:active {
 }
 
 a:visited {
-    color: plum;
+    color: #7FFF00;
 }
 
 a:hover {
@@ -63,7 +63,10 @@ body img {
 }
 
 footer {
+    position:fixed;
+    bottom: -100px;
     height: 200px;
+    width: 50%;
 }
 
 #log-in-button{
@@ -90,7 +93,7 @@ body {
   gap: 1rem;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
   background: #27272c;
 }
 
