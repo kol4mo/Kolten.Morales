@@ -7,6 +7,7 @@
 .hands {
   --cards: 8;
   --curvature: 70deg;
+  --names: "oops";
   counter-reset: cards;
   position: absolute;
   bottom: 0;
@@ -30,11 +31,11 @@
   transition: all 0.3s;
   position: absolute;
   cursor: pointer;
-  font-size: 11vmin;
+  font-size: 4vmin;
   transform-style: preserve-3d;
 }
 .hands > *::before {
-  content: counter(cards);
+  content: var(--names);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -67,48 +68,56 @@
 }
 .hands > *:nth-child(1) {
   --index: 0;
+  --names: "Airhead";
 }
 .hands:has(li:nth-child(2)) {
   --cards: 2;
 }
 .hands > *:nth-child(2) {
   --index: 1;
+  --names: "Excelent";
 }
 .hands:has(li:nth-child(3)) {
   --cards: 3;
 }
 .hands > *:nth-child(3) {
   --index: 2;
+  --names: "Tarot";
 }
 .hands:has(li:nth-child(4)) {
   --cards: 4;
 }
 .hands > *:nth-child(4) {
   --index: 3;
+  --names: "Old Ruins";
 }
 .hands:has(li:nth-child(5)) {
   --cards: 5;
 }
 .hands > *:nth-child(5) {
   --index: 4;
+  --names: "SBS";
 }
 .hands:has(li:nth-child(6)) {
   --cards: 6;
 }
 .hands > *:nth-child(6) {
   --index: 5;
+  --names: "Court of Shadows";
 }
 .hands:has(li:nth-child(7)) {
   --cards: 7;
 }
 .hands > *:nth-child(7) {
   --index: 6;
+  --names: "Rollback";
 }
 .hands:has(li:nth-child(8)) {
   --cards: 8;
 }
 .hands > *:nth-child(8) {
   --index: 7;
+  --names: "Heistalot";
 }
 .hands:has(li:nth-child(9)) {
   --cards: 9;
