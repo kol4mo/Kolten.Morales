@@ -5,7 +5,7 @@
   }
 }
 .hands {
-  --cards: 7;
+  --cards: 8;
   --curvature: 70deg;
   --names: "oops";
   counter-reset: cards;
@@ -117,6 +117,7 @@
 }
 .hands > *:nth-child(8) {
   --index: 7;
+  --names:"Multi Mancer"
 }
 .hands:has(li:nth-child(9)) {
   --cards: 9;
