@@ -5,7 +5,7 @@
   }
 }
 .hands {
-  --cards: 8;
+  --cards: 7;
   --curvature: 70deg;
   --names: "oops";
   counter-reset: cards;
