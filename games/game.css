@@ -6,7 +6,7 @@
 }
 
 .hands {
-    --cards: 5;
+    --cards: 6;
     --curvature: 70deg;
     --names: "oops";
     counter-reset: cards;
@@ -120,6 +120,7 @@
 
     .hands > *:nth-child(6) {
         --index: 5;
+        --names: "Desert Dash"
     }
 
     .hands:has(li:nth-child(7)) {
