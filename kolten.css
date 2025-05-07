@@ -57,9 +57,7 @@ table, th, td  {
 }
 
 body img {
-    width: 50%;
-    margin-left: 20%;
-    margin-right: 20%;
+    width: 300px;
     padding: 0px;
     border: 4px solid #00FFFF;
 }
