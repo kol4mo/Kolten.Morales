@@ -66,7 +66,7 @@
 .hands:has(li:nth-child(1)) { --cards: 1; }
 .hands > *:nth-child(1) {
     --index: 0;
-    --img: url('images/shaders2.png');
+    --img: url('images/shaders.png');
 }
 
 .hands:has(li:nth-child(2)) { --cards: 2; }
