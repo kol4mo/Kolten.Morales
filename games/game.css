@@ -66,37 +66,37 @@
 .hands:has(li:nth-child(1)) { --cards: 1; }
 .hands > *:nth-child(1) {
     --index: 0;
-    --img: url('images/shaders.png');
+    --img: url('images/shaders2.png');
 }
 
 .hands:has(li:nth-child(2)) { --cards: 2; }
 .hands > *:nth-child(2) {
     --index: 1;
-    --img: url('images/court-of-shadows.png');
+    --img: url('images/court-of-shadows2.png');
 }
 
 .hands:has(li:nth-child(3)) { --cards: 3; }
 .hands > *:nth-child(3) {
     --index: 2;
-    --img: url('images/multi-mancer.jpg');
+    --img: url('images/multimancer2.png');
 }
 
 .hands:has(li:nth-child(4)) { --cards: 4; }
 .hands > *:nth-child(4) {
     --index: 3;
-    --img: url('images/packing.png');
+    --img: url('images/packing2.png');
 }
 
 .hands:has(li:nth-child(5)) { --cards: 5; }
 .hands > *:nth-child(5) {
     --index: 4;
-    --img: url('images/desert-dash.jpg');
+    --img: url('images/DesertDash.png');
 }
 
 .hands:has(li:nth-child(6)) { --cards: 6; }
 .hands > *:nth-child(6) {
     --index: 5;
-    --img: url('images/bouncing-buds.jpg');
+    --img: url('images/boucning_buds.png');
 }
 
 /* Add more if needed using this pattern */
