@@ -15,6 +15,15 @@
       height: 100%;
       background: #222;
     }
+    #nav-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+    #nav-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+    }
   </style>
 </head>
 <body id="body">
@@ -30,22 +39,78 @@
     <canvas id="unity-canvas"></canvas>
   </div>
 
-  <script src="ScanlineWebBuild/Build/ScanlineWebBuild.loader.js"></script>
+  <div id="nav-buttons">
+    <button onclick="prevProject()">◀ Prev</button>
+    <button onclick="nextProject()">Next ▶</button>
+  </div>
+
   <script>
-    createUnityInstance(document.querySelector("#unity-canvas"), {
-      dataUrl: "ScanlineWebBuild/Build/ScanlineWebBuild.data.unityweb",
-      frameworkUrl: "ScanlineWebBuild/Build/ScanlineWebBuild.framework.js.unityweb",
-      codeUrl: "ScanlineWebBuild/Build/ScanlineWebBuild.wasm.unityweb",
-      streamingAssetsUrl: "StreamingAssets",
-      companyName: "YourCompany",
-      productName: "YourGame",
-      productVersion: "1.0",
-      // Fixes the JS_FileSystem_Sync warning
-      autoSyncPersistentDataPath: true,
-      // Optional: show progress bar
-      onProgress: (unityInstance, progress) => {
-        console.log(`Loading: ${Math.floor(progress * 100)}%`);
+    const builds = [
+      {
+        name: "ScanlineWebBuild",
+        path: "ScanlineWebBuild/Build/ScanlineWebBuild"
+      },
+      {
+        name: "AnotherWebBuild",
+        path: "AnotherWebBuild/Build/AnotherWebBuild"
+      },
+      {
+        name: "CoolShaderDemo",
+        path: "CoolShaderDemo/Build/CoolShaderDemo"
       }
+    ];
+
+    let currentIndex = 0;
+    let unityInstance = null;
+
+    function loadProject(index) {
+      const build = builds[index];
+      if (unityInstance) {
+        unityInstance.Quit().then(() => {
+          loadUnity(build);
+        });
+      } else {
+        loadUnity(build);
+      }
+    }
+
+    function loadUnity(build) {
+      const canvas = document.querySelector("#unity-canvas");
+      const loaderScript = document.createElement("script");
+      loaderScript.src = `${build.path}.loader.js`;
+      loaderScript.onload = () => {
+        createUnityInstance(canvas, {
+          dataUrl: `${build.path}.data.unityweb`,
+          frameworkUrl: `${build.path}.framework.js.unityweb`,
+          codeUrl: `${build.path}.wasm.unityweb`,
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "YourCompany",
+          productName: build.name,
+          productVersion: "1.0",
+          autoSyncPersistentDataPath: true,
+          onProgress: (unity, progress) => {
+            console.log(`${build.name}: ${Math.floor(progress * 100)}%`);
+          }
+        }).then(instance => {
+          unityInstance = instance;
+        });
+      };
+      document.body.appendChild(loaderScript);
+    }
+
+    function nextProject() {
+      currentIndex = (currentIndex + 1) % builds.length;
+      loadProject(currentIndex);
+    }
+
+    function prevProject() {
+      currentIndex = (currentIndex - 1 + builds.length) % builds.length;
+      loadProject(currentIndex);
+    }
+
+    // Load first project on start
+    window.addEventListener("load", () => {
+      loadProject(currentIndex);
     });
   </script>
 </body>
