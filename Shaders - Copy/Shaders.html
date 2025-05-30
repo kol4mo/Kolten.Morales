@@ -116,9 +116,9 @@
       loaderScript.src = `${build.path}.loader.js`;
       loaderScript.onload = () => {
         createUnityInstance(canvas, {
-          dataUrl: `${build.path}.data.unityweb`,
-          frameworkUrl: `${build.path}.framework.js.unityweb`,
-          codeUrl: `${build.path}.wasm.unityweb`,
+          dataUrl: `${build.path}.data.gz`,
+          frameworkUrl: `${build.path}.framework.js.gz`,
+          codeUrl: `${build.path}.wasm.gz`,
           streamingAssetsUrl: "StreamingAssets",
           companyName: "YourCompany",
           productName: build.name,
