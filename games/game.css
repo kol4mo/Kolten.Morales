@@ -99,4 +99,10 @@
     --img: url('images/boucning_buds.png');
 }
 
+.hands:has(li:nth-child(7)) { --cards: 7; }
+.hands > *:nth-child(7) {
+    --index: 6;
+    --img: url('images/FYFCover.png');
+}
+
 /* Add more if needed using this pattern */
