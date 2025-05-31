@@ -1,0 +1,116 @@
+:root {
+  --gray: #808080;
+  --gray-medium: #c1bfbf;
+  --gray-light: #d3d3d3;
+  --paper-color: #eff8fe;
+}
+
+#paper-layout {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Courier New', sans-serif;
+}
+
+#paper-layout h1 {
+  font-size: 1.2rem;
+  color: #808080;
+}
+#paper-layout h4 {
+  color: #808080;
+}
+#paper-layout .paper {
+  position: relative;
+  padding: 10px;
+  width: 12rem;
+  min-height: 120px;
+  background: linear-gradient(135deg, var(--paper-color), 85%, var(--gray-light));
+  box-shadow: 1px 0 1px var(--gray);
+  text-align: center;
+}
+
+#paper-layout .paper::before,
+#paper-layout .paper::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--gray);
+}
+#paper-layout .paper::before { left: 5px; }
+#paper-layout .paper::after  { right: 5px; }
+
+#paper-layout .numbers {
+  display: flex;
+  min-height: 11rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#paper-layout .number {
+    margin: 0;
+  position: relative;
+  width: 100%;
+  background: linear-gradient(to right, var(--paper-color), 80%, var(--gray-light));
+  border-top: 1px dashed var(--gray);
+  box-shadow: 1px 1px 1px var(--gray);
+  transform-origin: center top;
+}
+
+#paper-layout .link-wrapper {
+    color:aqua;
+  position: absolute;
+  display: flex;
+  top: 0;
+  transform: rotate(90deg);
+  transform-origin: top left;
+  font-size: 0.9rem;
+  margin-left: 1.7rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+#paper-layout a:link {
+    color: blue;
+}
+#paper-layout .link-wrapper i {
+  margin-right: 5px;
+  font-size: 1.1rem;
+}
+
+#paper-layout .link-wrapper a {
+  text-decoration-style: dashed;
+  font-family: sans-serif;
+}
+
+#paper-layout .number:nth-child(2) {
+  transform: skew(-5deg, 0deg);
+  background: var(--paper-color);
+}
+
+#paper-layout .number:nth-child(2)::after,
+#paper-layout .number:nth-child(4)::after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gray-light), 5%, rgba(211, 211, 211, 0));
+}
+
+#paper-layout .number:nth-child(1),
+#paper-layout .number:nth-child(3) {
+  background: linear-gradient(to right, var(--paper-color), 60%, var(--gray-light));
+}
+
+#paper-layout .number:nth-child(4) {
+  transform: skew(-8deg, 0deg);
+  background: var(--paper-color);
+}
+
+#paper-layout .number:nth-child(5) {
+  transform: skew(-3deg, 0deg);
+}
