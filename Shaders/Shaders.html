@@ -1,47 +1,182 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<link href="../kolten.css" rel="stylesheet"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="../kolten.css" rel="stylesheet"/>
+  <style>
+    #unity-container {
+      width: 960px;
+      height: 600px;
+      margin: auto;
+      background: #000;
+      position: relative;
+    }
+    canvas {
+      width: 100%;
+      height: 100%;
+      background: #222;
+    }
+    #nav-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+    #nav-buttons button {
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-size: 16px;
+    }
+
+    #loading-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: #00FFFF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      z-index: 1000;
+      display: none; /* hidden by default */
+    }
+  </style>
 </head>
-<body id = "body">
-    <header id="myHeader">
-        <h1>
-            Shaders
-        </h1>
-        <a href="../index.html"><button style="--clr:#00FFFF"><span>Home</span><i></i></button></a>
-        <a href="../plans/plans.html"><button style="--clr:#00FFFF"><span>Skills</span><i></i></button></a>
-        <a href="../games/games.html"><button style="--clr:#00FFFF"><span>Software</span><i></i></button></a>
-        <a href="../Contacts/ContactMe.html"><button style="--clr:#00FFFF"><span>Contact Me</span><i></i></button></a>
-    </header>
-    <p>
-        This was some work I did in Unity making shaders in April of 2024.
-        Here is the base scene with no shaders:
-    </p>
-    <img src="NoShader.PNG"/>
-    <p>
-        I started of with a cartoom shader making use of cel-shading, outline, a benday-dot bloom, and a cross hacth shade affect. this was the final result:
-    </p>
-    <img src="ToonShader.PNG"/>
-    <p>
-        The next one I worked on was a pixel renderer, this does have the ability to change the resolution any amount, this is in 64-bit:
-    </p>
-    <img src="Pixel.PNG"/>
-    <p>
-        Next I worked on a VHS rendering, as if the scene was taped on a recorder. This will not show of the glitch effect well in photo format:
-    </p>
-    <img src="VHS.PNG"/>
-    <p> 
-        This is a Moebius artstyle filter. using consitent thin line weights, vibrant colors and crosshatching for shading, this is What I have:
-    </p>
-    <img src="Moebius.PNG"/>
-    <img src="MoebiusColor.PNG"/>
-    <p>
-        This is the last shader which is a ASCII color shader:
-    </p>
-    <img src="ASCII.PNG"/>
-    <p>
-        That was all the shaders I have worked on, and had a lot of fun learning about, shadergraphs, HLSL, Render features, and passes.
-    </p>
+<body id="body">
+  <header id="myHeader">
+    <h1>Shaders</h1>
+    <a href="../index.html"><button style="--clr:#00FFFF"><span>Home</span><i></i></button></a>
+    <a href="../plans/plans.html"><button style="--clr:#00FFFF"><span>Skills</span><i></i></button></a>
+    <a href="../games/games.html"><button style="--clr:#00FFFF"><span>Software</span><i></i></button></a>
+    <a href="../Contacts/ContactMe.html"><button style="--clr:#00FFFF"><span>Contact Me</span><i></i></button></a>
+  </header>
+  <div id="shader-info" style="text-align:center; margin: 20px;">
+    <h2 id="shader-title" style="color:#00FFFF;"></h2>
+    <h4 id="shader-description" style="color:#CCCCCC;"></h4>
+  </div>
+
+  <div id="unity-container">
+    <canvas id="unity-canvas"></canvas>
+    <div id="loading-overlay">Loading...</div>
+  </div>
+
+  <div id="nav-buttons">
+    <button onclick="prevProject()" style="--clr:#00FFFF"><span>◀ Prev</span></button>
+    <button onclick="nextProject()" style="--clr:#00FFFF"><span>Next ▶</span></button>
+  </div>
+
+  <script>
+      const builds = [
+        {
+          name: "ScanlineWebBuild",
+          path: "ScanlineWebBuild/Build/ScanlineWebBuild",
+          title: "Scanline Shader",
+          description: "A retro CRT-style shader that simulates horizontal scanlines, distortion, abberation, and noise."
+        },
+        {
+          name: "ASCIIShader",
+          path: "ASCIIShader/Build/ASCIIShader",
+          title: "ASCII Shader",
+          description: "Renders the scene using a text-based ASCII art effect."
+        },
+        {
+          name: "MoebiusShader",
+          path: "MoebiusShader/Build/MoebiusShader",
+          title: "Moebius Shader",
+          description: "Inspired by Moebius art, this shader emphasizes ink outlines and pastel color palettes."
+        },
+        {
+          name: "CartoonCel",
+          path: "CartoonCel/Build/CartoonCel",
+          title: "Cartoon Cel Shader",
+          description: "Applies cel-shading for a toon-like rendering with hard lighting bands and outlines."
+        },
+        {
+          name: "KuwaharaFilter",
+          path: "KuwaharaFilter/Build/KuwaharaFilter",
+          title: "Kuwahara Filter",
+          description: "A stylized filter creating a painterly effect, and simple line shader"
+        }
+    ];
+
+    let currentIndex = 0;
+    let unityInstance = null;
+    const loadingOverlay = document.getElementById("loading-overlay");
+
+    function showLoading() {
+      loadingOverlay.style.display = "flex";
+    }
+
+    function hideLoading() {
+      loadingOverlay.style.display = "none";
+    }
+
+    function loadProject(index) {
+      const build = builds[index];
+      showLoading();
+
+      document.getElementById("shader-title").innerText = build.title;
+      document.getElementById("shader-description").innerText = build.description;
+
+      if (unityInstance) {
+        unityInstance.Quit().then(() => {
+          unityInstance = null;
+          loadUnity(build);
+        });
+      } else {
+        loadUnity(build);
+      }
+    }
+
+
+    function loadUnity(build) {
+      const canvas = document.querySelector("#unity-canvas");
+
+      // Remove any existing loader script to prevent duplicates
+      const oldScript = document.getElementById("unity-loader");
+      if (oldScript) oldScript.remove();
+
+      const loaderScript = document.createElement("script");
+      loaderScript.id = "unity-loader";
+      loaderScript.src = `${build.path}.loader.js`;
+      loaderScript.onload = () => {
+        createUnityInstance(canvas, {
+          dataUrl: `${build.path}.data`,
+          frameworkUrl: `${build.path}.framework.js`,
+          codeUrl: `${build.path}.wasm`,
+          streamingAssetsUrl: "StreamingAssets",
+          companyName: "YourCompany",
+          productName: build.name,
+          productVersion: "1.0",
+          autoSyncPersistentDataPath: true,
+          onProgress: (unity, progress) => {
+            console.log(`${build.name}: ${Math.floor(progress * 100)}%`);
+          }
+        }).then(instance => {
+          unityInstance = instance;
+          hideLoading();
+        }).catch(err => {
+          console.error("Unity load failed:", err);
+          hideLoading();
+        });
+      };
+      document.body.appendChild(loaderScript);
+    }
+
+    function nextProject() {
+      currentIndex = (currentIndex + 1) % builds.length;
+      loadProject(currentIndex);
+    }
+
+    function prevProject() {
+      currentIndex = (currentIndex - 1 + builds.length) % builds.length;
+      loadProject(currentIndex);
+    }
+
+    window.addEventListener("load", () => {
+      loadProject(currentIndex);
+    });
+  </script>
 </body>
 </html>
