@@ -5,7 +5,7 @@
 }
 
 .hands {
-    --cards: 6;
+    --cards: 7;
     --curvature: 70deg;
     counter-reset: cards;
     position: absolute;
