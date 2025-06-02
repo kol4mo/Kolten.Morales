@@ -5,7 +5,7 @@
 }
 
 .hands {
-    --cards: 7;
+    --cards: 9;
     --curvature: 70deg;
     counter-reset: cards;
     position: absolute;
@@ -102,6 +102,18 @@
 .hands:has(li:nth-child(7)) { --cards: 7; }
 .hands > *:nth-child(7) {
     --index: 6;
+    --img: url('images/Satori.png');
+}
+
+.hands:has(li:nth-child(8)) { --cards: 8; }
+.hands > *:nth-child(8) {
+    --index: 7;
+    --img: url('images/Iamai.png');
+}
+
+.hands:has(li:nth-child(9)) { --cards: 9; }
+.hands > *:nth-child(9) {
+    --index: 8;
     --img: url('images/FYFCover.png');
 }
 
