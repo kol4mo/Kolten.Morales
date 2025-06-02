@@ -3,45 +3,72 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <link href="../kolten.css" rel="stylesheet"/>
-  <style>
-    #unity-container {
-      width: 960px;
-      height: 600px;
-      margin: auto;
-      background: #000;
-      position: relative;
-    }
-    canvas {
-      width: 100%;
-      height: 100%;
-      background: #222;
-    }
-    #nav-buttons {
-      text-align: center;
-      margin: 20px;
-    }
-    #nav-buttons button {
-      padding: 10px 20px;
-      margin: 0 10px;
-      font-size: 16px;
-    }
+ <style>
+  #unity-container {
+    width: 960px;
+    height: 600px;
+    margin: auto;
+    background: #000;
+    position: relative;
+  }
 
-    #loading-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      color: #00FFFF;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      z-index: 1000;
-      display: none; /* hidden by default */
-    }
-  </style>
+  canvas {
+    width: 100%;
+    height: 100%;
+    background: #222;
+  }
+
+  #shader-info {
+    text-align: center;
+    margin: 30px auto 20px auto;
+    padding: 1rem;
+    max-width: 700px;
+    border: 2px solid #00FFFF;
+    border-radius: 8px;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+
+  #shader-title {
+    font-size: 1.8rem;
+    color: #00FFFF;
+    margin-bottom: 0.5rem;
+  }
+
+  #shader-description {
+    font-size: 1.1rem;
+    color: #CCCCCC;
+    line-height: 1.5;
+  }
+
+  #nav-buttons {
+    text-align: center;
+    margin: 20px;
+  }
+
+  #nav-buttons button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+  }
+
+  #loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    color: #00FFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 1000;
+    display: none; /* hidden by default */
+  }
+</style>
+
 </head>
 <body id="body">
   <header id="myHeader">
@@ -68,37 +95,38 @@
 
   <script>
       const builds = [
-        {
-          name: "ScanlineWebBuild",
-          path: "ScanlineWebBuild/Build/ScanlineWebBuild",
-          title: "Scanline Shader",
-          description: "A retro CRT-style shader that simulates horizontal scanlines, distortion, abberation, and noise."
-        },
-        {
-          name: "ASCIIShader",
-          path: "ASCIIShader/Build/ASCIIShader",
-          title: "ASCII Shader",
-          description: "Renders the scene using a text-based ASCII art effect."
-        },
-        {
-          name: "MoebiusShader",
-          path: "MoebiusShader/Build/MoebiusShader",
-          title: "Moebius Shader",
-          description: "Inspired by Moebius art, this shader emphasizes ink outlines and pastel color palettes."
-        },
-        {
-          name: "CartoonCel",
-          path: "CartoonCel/Build/CartoonCel",
-          title: "Cartoon Cel Shader",
-          description: "Applies cel-shading for a toon-like rendering with hard lighting bands and outlines."
-        },
-        {
-          name: "KuwaharaFilter",
-          path: "KuwaharaFilter/Build/KuwaharaFilter",
-          title: "Kuwahara Filter",
-          description: "A stylized filter creating a painterly effect, and simple line shader"
-        }
-    ];
+  {
+    name: "ScanlineWebBuild",
+    path: "ScanlineWebBuild/Build/ScanlineWebBuild",
+    title: "CRT Scanline Shader",
+    description: "A retro-inspired shader simulating CRT effects, including horizontal scanlines, chromatic distortion, and subtle screen flicker."
+  },
+  {
+    name: "ASCIIShader",
+    path: "ASCIIShader/Build/ASCIIShader",
+    title: "ASCII Art Shader",
+    description: "Transforms 3D scenes into animated ASCII art, mapping brightness to text glyphs in real time."
+  },
+  {
+    name: "MoebiusShader",
+    path: "MoebiusShader/Build/MoebiusShader",
+    title: "Moebius Ink Shader",
+    description: "Captures the look of Moebius-style art using bold outlines, minimal shading, and a hand-drawn aesthetic."
+  },
+  {
+    name: "CartoonCel",
+    path: "CartoonCel/Build/CartoonCel",
+    title: "Cel-Shading Shader",
+    description: "Applies a comic book-style cel shader with hard shadow bands, edge outlines, and vibrant color flattening."
+  },
+  {
+    name: "KuwaharaFilter",
+    path: "KuwaharaFilter/Build/KuwaharaFilter",
+    title: "Kuwahara Painter Shader",
+    description: "A stylized post-processing effect that simplifies textures into painterly strokes and outlines key edges."
+  }
+];
+
 
     let currentIndex = 0;
     let unityInstance = null;

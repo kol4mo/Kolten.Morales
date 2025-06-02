@@ -1,23 +1,36 @@
-<html>
-    <head>
-        <link href="kolten.css" rel="stylesheet"/>
-        <script src="index.js" defer></script> 
-    </head>
-    <body>
-        <header>
-            <h1 id="header">
-                Home
-            </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Kolten Morales | Home</title>
+    <link href="kolten.css" rel="stylesheet"/>
+    <script src="index.js" defer></script> 
+</head>
+<body>
+    <header>
+        <h1 id="header">Kolten Morales</h1>
+        <nav>
             <a href="plans/plans.html"><button style="--clr:#00FFFF"><span>Skills</span><i></i></button></a>
             <a href="games/games.html"><button style="--clr:#00FFFF"><span>Software</span><i></i></button></a>
             <a href="Contacts/ContactMe.html"><button style="--clr:#00FFFF"><span>Contact Me</span><i></i></button></a>
-        </header>
-            <img src="./headshot.jpg" width="300px"/>
-        <h2 class="full-border">
-            Bio
-        </h2>
-        <p>
-            I started off my obsession with computer science early in high school. I had entered the Coolmath Game Jam of 2019. Even though I didnt place at all, playing a video game that I made was spectacular in my eyes. I started taking more STEM courses, mostly engineering and computer science. Eventually I had to pick a college to go to, and good game development colleges are rare. Eventually I chose Neumont for its project based learning style, meaning it would help in building my portfolio and resume and projects.
-        </p>
-    </body>
+        </nav>
+    </header>
+
+    <main style="max-width: 800px; margin: 40px auto; padding: 0 20px;">
+        <section style="text-align: center;">
+            <img src="./headshot.jpg" width="200" style="border-radius: 100px; box-shadow: 0 4px 12px rgba(0, 255, 255, 0.4);" alt="Kolten Morales headshot"/>
+        </section>
+
+        <section>
+            <h2 class="full-border" style="margin-top: 30px;">Bio</h2>
+            <p style="line-height: 1.6; font-size: 1.05rem;">
+                My journey into computer science began in high school, where I participated in the 2019 Coolmath Game Jam. Although I didn’t place, the experience of playing a game I built from scratch was unforgettable—and it sparked my passion for development.
+            </p>
+            <p style="line-height: 1.6; font-size: 1.05rem;">
+                I immersed myself in STEM classes—engineering, programming, and design—and knew I wanted a career creating interactive software. When it came time to choose a college, I picked Neumont College of Computer Science for its project-based learning. It’s been a perfect fit, letting me develop a portfolio filled with real games, AI tools, and cross-platform software.
+            </p>
+        </section>
+    </main>
+</body>
 </html>

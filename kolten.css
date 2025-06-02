@@ -202,3 +202,53 @@ button:hover i::after {
     box-shadow: #27272c;
   }
 }
+/* Improve paragraph and bio readability */
+p {
+  max-width: 700px;
+  width: 90%;
+  margin: 1rem auto;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  border: 2px solid #00FFFF;
+  padding: 1rem;
+  background: rgba(0, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+/* Headshot image responsive */
+body img {
+  width: 200px;
+  max-width: 90%;
+  border-radius: 100px;
+  border: 4px solid #00FFFF;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  margin-top: 1rem;
+}
+
+/* Center main content better */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+}
+
+/* Adjust full-border heading */
+.full-border {
+  border: 2px solid #00FFFF;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  background: rgba(0, 255, 255, 0.1);
+  margin-top: 2rem;
+}
+
+/* Optional: better nav layout */
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
