@@ -1,70 +1,106 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <link href="../kolten.css" rel="stylesheet"/>
-        <link href="Contacts.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-...your-integrity-key..." crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-        <title>Contacts</title>
-    <body>
-        <header>
-            <h2 id="header">
-                My Contacts
-            </h2>
-                <a href="../index.html"><button style="--clr:#00FFFF"><span>Home</span><i></i></button></a>
-                <a href="../plans/plans.html"><button style="--clr:#00FFFF"><span>Skills</span><i></i></button></a>
-                <a href="../Software/Software.html"><button style="--clr:#00FFFF"><span>Software</span><i></i></button></a>
-                <a href="../games/games.html"><button style="--clr:#00FFFF"><span>Games</span><i></i></button></a>
-        </header>
-        <!-- <ol>
-            <li>My <a href="mailto:Koltenmo@outlook.com">Email</a>, Koltenmo@outlook.com</li>
-            <li>My <a href="https://itch.io/profile/kol4mo">Itch</a>, Kol4mo</li>
-            <li>My <a href="https://github.com/kol4mo">Github</a>, Kol4mo</li>
-            <li>My <a href="https://www.linkedin.com/in/kolten-morales-2a5b60235/">Linkedin</a>, Kolten Morales</li>
-            <li>My <a href="Resume.pdf">Resume</a></li>
-            <li>My <a href="https://www.youtube.com/channel/UCbKPnaOOIj4hHw0eYgvenIw">Youtube</a>, LackLusterLabs</li>
-        </ol>  -->
-        <div id ="paper-layout">
-            <div class="container">
-                <div class="paper">
-                    <h1>contact me</h1>
-                    <h4>I look forward to hearing from you!</h4>
-                </div>
-                <ul class="numbers" role="list">
-                    <li class="number" role="listitem">
-                    <div class="link-wrapper">
-                        <i class="fas fa-envelope" aria-hidden="true"></i>
-                        <a href="mailto:Koltenmo@outlook.com" aria-label="Email">Koltenmo</a>
-                    </div>
-                    </li>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link href="../kolten.css" rel="stylesheet" />
+    <style>
+        .contact-wrapper {
+            background: rgba(0, 255, 255, 0.05);
+            border: 2px solid #00FFFF;
+            border-radius: 12px;
+            padding: 2rem;
+            max-width: 700px;
+            margin: 2rem auto;
+            text-align: center;
+            box-shadow: 0 0 25px rgba(0, 255, 255, 0.15);
+        }
 
-                    <li class="number" role="listitem">
-                    <div class="link-wrapper">
-                        <i class="fab fa-itch-io" aria-hidden="true"></i>
-                        <a href="https://itch.io/profile/kol4mo" aria-label="Itch Profile" target="_blank" rel="noopener noreferrer">Kol4mo</a>
-                    </div>
-                    </li>
-                    <li class="number" role="listitem">
-                    <div class="link-wrapper">
-                        <i class="fab fa-github" aria-hidden="true"></i>
-                        <a href="https://github.com/kol4mo" aria-label="Github Profile" target="_blank" rel="noopener noreferrer">Kol4mo</a>
-                    </div>
-                    </li>
-                    <li class="number" role="listitem">
-                    <div class="link-wrapper">
-                        <i class="fab fa-linkedin" aria-hidden="true"></i>
-                        <a href="https://www.linkedin.com/in/kolten-morales-2a5b60235/" aria-label="Linkedin Profile" target="_blank" rel="noopener noreferrer">KoltenMorales</a>
-                    </div>
-                    </li>
-                    <li class="number" role="listitem">
-                    <div class="link-wrapper">
-                        <i class="fas fa-file" aria-hidden="true"></i>
-                        <a href="Kolten_Morales_Resume.pdf" aria-label="Resume" target="_blank" rel="noopener noreferrer">Resume</a>
-                    </div>
-                    </li>
-                </ul>
+        .contact-title {
+            font-size: 2rem;
+            color: #00FFFF;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-subtitle {
+            color: #ccc;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            justify-items: center;
+            padding: 1rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.4rem;
+            color: #00FFFF;
+        }
+
+        .contact-item a {
+            color: #00FFFF;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 500px) {
+            .contact-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+    <header>
+        <h2 id="header">My Contacts</h2>
+        <nav>
+            <a href="../index.html"><button style="--clr:#00FFFF"><span>Home</span><i></i></button></a>
+            <a href="../plans/plans.html"><button style="--clr:#00FFFF"><span>Skills</span><i></i></button></a>
+            <a href="../Software/Software.html"><button style="--clr:#00FFFF"><span>Software</span><i></i></button></a>
+            <a href="../games/games.html"><button style="--clr:#00FFFF"><span>Games</span><i></i></button></a>
+        </nav>
+    </header>
+
+    <div class="contact-wrapper">
+        <div class="contact-title">Contact Me</div>
+        <div class="contact-subtitle">I look forward to hearing from you!</div>
+        <div class="contact-links">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:Koltenmo@outlook.com">Koltenmo@outlook.com</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-itch-io"></i>
+                <a href="https://itch.io/profile/kol4mo" target="_blank">Itch.io - Kol4mo</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-github"></i>
+                <a href="https://github.com/kol4mo" target="_blank">GitHub - Kol4mo</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/kolten-morales-2a5b60235/" target="_blank">LinkedIn - Kolten Morales</a>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-file"></i>
+                <a href="Kolten_Morales_Resume.pdf" target="_blank">View My Resume</a>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-youtube"></i>
+                <a href="https://www.youtube.com/channel/UCbKPnaOOIj4hHw0eYgvenIw" target="_blank">YouTube - LackLusterLabs</a>
             </div>
         </div>
-        <!-- <iframe src="https://discord.com/widget?id=1128717088970776687&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-    -->
-    </body>
+    </div>
+</body>
 </html>
