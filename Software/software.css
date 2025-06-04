@@ -5,7 +5,7 @@
 }
 
 .hands {
-    --cards: 8;
+    --cards: 4;
     --curvature: 70deg;
     counter-reset: cards;
     position: absolute;
@@ -66,49 +66,25 @@
 .hands:has(li:nth-child(1)) { --cards: 1; }
 .hands > *:nth-child(1) {
     --index: 0;
-    --img: url('images/shaders2.png');
+    --img: url('../games/images/shaders2.png');
 }
 
 .hands:has(li:nth-child(2)) { --cards: 2; }
 .hands > *:nth-child(2) {
     --index: 1;
-    --img: url('images/court-of-shadows2.png');
+    --img: url('../games/images/UC.png');
 }
 
 .hands:has(li:nth-child(3)) { --cards: 3; }
 .hands > *:nth-child(3) {
     --index: 2;
-    --img: url('images/multimancer2.png');
+    --img: url('../games/images/Satori.png');
 }
 
 .hands:has(li:nth-child(4)) { --cards: 4; }
 .hands > *:nth-child(4) {
     --index: 3;
-    --img: url('images/packing2.png');
-}
-
-.hands:has(li:nth-child(5)) { --cards: 5; }
-.hands > *:nth-child(5) {
-    --index: 4;
-    --img: url('images/DesertDash.png');
-}
-
-.hands:has(li:nth-child(6)) { --cards: 6; }
-.hands > *:nth-child(6) {
-    --index: 5;
-    --img: url('images/boucning_buds.png');
-}
-
-.hands:has(li:nth-child(7)) { --cards: 7; }
-.hands > *:nth-child(7) {
-    --index: 6;
-    --img: url('images/Satori.png');
-}
-
-.hands:has(li:nth-child(8)) { --cards: 8; }
-.hands > *:nth-child(8) {
-    --index: 7;
-    --img: url('images/FYFCover.png');
+    --img: url('../games/images/Iamai.png');
 }
 
 /* Add more if needed using this pattern */
