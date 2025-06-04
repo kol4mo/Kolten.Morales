@@ -102,7 +102,7 @@
 .hands:has(li:nth-child(7)) { --cards: 7; }
 .hands > *:nth-child(7) {
     --index: 6;
-    --img: url('images/Satori.png');
+    --img: url('images/SatoriIdle.png');
 }
 
 .hands:has(li:nth-child(8)) { --cards: 8; }
