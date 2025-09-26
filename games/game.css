@@ -5,7 +5,7 @@
 }
 
 .hands {
-    --cards: 8;
+    --cards: 9;
     --curvature: 70deg;
     counter-reset: cards;
     position: absolute;
@@ -109,6 +109,12 @@
 .hands > *:nth-child(8) {
     --index: 7;
     --img: url('images/FYFCover.png');
+}
+
+.hands:has(li:nth-child(9)) { --cards: 9; }
+.hands > *:nth-child(9) {
+    --index: 8;
+    --img: url('images/rootwords.png');
 }
 
 /* Add more if needed using this pattern */
